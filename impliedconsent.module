@@ -115,14 +115,16 @@ function _impliedconsent_visibility_roles($account) {
     foreach (array_keys($account->roles) as $rid) {
       // Is the current user a member of one of these roles?
       if (isset($roles[$rid]) && $rid == $roles[$rid]) {
-        // Current user is a member of a role that should or should not be notified.
+        // Current user is a member of a role that
+        // should or should not be notified.
         $enabled = !$visibility;
         break;
       }
     }
   }
   else {
-    // No role is selected being notified, therefore all roles should get the notice.
+    // No role is selected being notified, therefore
+    // all roles should get the notice.
     $enabled = TRUE;
   }
 
@@ -148,7 +150,7 @@ function _impliedconsent_visibility_pages() {
       // with different case. Ex: /Page, /page, /PAGE.
       $pages = drupal_strtolower($setting_pages);
       if ($visibility < 2) {
-        // Convert the Drupal path to lowercase
+        // Convert the Drupal path to lowercase.
         $path = drupal_strtolower(drupal_get_path_alias($_GET['q']));
         // Compare the lowercase internal and lowercase path alias (if any).
         $page_match = drupal_match_path($path, $pages);

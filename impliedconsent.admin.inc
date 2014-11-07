@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_admin_settings() for module settings configuration.
+ * Implements hook_admin_settings().
  */
 function impliedconsent_admin_settings_form($form_state) {
 

@@ -1,7 +1,4 @@
 name = Implied Consent
 description = Displays the Implied Consent cookie notice plugin
 core = 7.x
-
 dependencies[] = libraries
-
-files[] = impliedconsent.admin.inc

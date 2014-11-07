@@ -19,7 +19,7 @@ function impliedconsent_uninstall() {
 }
 
 /**
- * Implementation of hook_requirements().
+ * Implements hook_requirements().
  */
 function impliedconsent_requirements($phase) {
   $requirements = array();
