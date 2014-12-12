@@ -91,7 +91,7 @@ jQQ.isolate(function($) {
 });
 EOF;
       // Add the initiator script.
-      drupal_add_js($init, 'inline');
+      drupal_add_js($init, array('type' => 'inline', 'scope' => 'footer'));
       // Load the library.
       $variant = variable_get('impliedconsent_variant', IMPLIEDCONSENT_VARIANT);
       libraries_load('implied-consent', $variant);
