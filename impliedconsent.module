@@ -101,6 +101,8 @@ EOF;
 }
 
 /**
+ * Determine role visibility based on configured criteria.
+ *
  * Based on visibility setting this function returns TRUE if the plugin should
  * be added for the current role and otherwise FALSE.
  */
@@ -132,6 +134,8 @@ function _impliedconsent_visibility_roles($account) {
 }
 
 /**
+ * Determine page visibility based on configured criteria.
+ *
  * Based on visibility setting this function returns TRUE if the plugin should
  * be added to the current page and otherwise FALSE.
  */

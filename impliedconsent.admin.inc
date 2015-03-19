@@ -55,7 +55,13 @@ function impliedconsent_admin_settings_form($form_state) {
     t('Every page except the listed pages'),
     t('The listed pages only'),
   );
-  $description = t("Specify pages by using their paths. Enter one path per line. The '*' character is a wildcard. Example paths are %blog for the blog page and %blog-wildcard for every personal blog. %front is the front page.", array('%blog' => 'blog', '%blog-wildcard' => 'blog/*', '%front' => '<front>'));
+  $description = t("Specify pages by using their paths. Enter one path per line. The '*' character is a wildcard. Example paths are %blog for the blog page and %blog-wildcard for every personal blog. %front is the front page.",
+    array(
+      '%blog' => 'blog',
+      '%blog-wildcard' => 'blog/*',
+      '%front' => '<front>',
+    )
+  );
 
   $form['page_vis_settings']['impliedconsent_visibility_pages'] = array(
     '#type' => 'radios',
