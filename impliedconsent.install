@@ -16,6 +16,7 @@ function impliedconsent_uninstall() {
   variable_del('impliedconsent_variant');
   variable_del('impliedconsent_visibility_pages');
   variable_del('impliedconsent_visibility_roles');
+  variable_del('impliedconsent_method');
 }
 
 /**

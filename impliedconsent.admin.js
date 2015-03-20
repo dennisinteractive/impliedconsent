@@ -22,10 +22,12 @@ Drupal.behaviors.impliedConsentVerticalTabs = {
 
     $('fieldset#edit-advanced', context).drupalSetSummary(function (context) {
       var variant = Drupal.checkPlain($('input[name="impliedconsent_variant"]:checked', context).val());
+      var method = Drupal.checkPlain($('input[name="impliedconsent_method"]:checked', context).val());
       var async = Drupal.checkPlain($('#edit-impliedconsent-async', context).is(':checked'));
 
       summary = 'Variant: ' + variant + '<br/>';
-      summary += (async == "true" ? checkmark : exmark) + ' Do not load automatically' + '<br/>';
+      summary += 'Method: ' + method + '<br/>';
+      summary += (async == "true" ? checkmark : exmark) + ' Skip autoloading' + '<br/>';
 
       return summary;
     });

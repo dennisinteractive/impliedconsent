@@ -124,9 +124,19 @@ function impliedconsent_admin_settings_form($form_state) {
     ),
     '#description' => t('Choose the plugin variant to include on pages. Uncompressed code may help with debugging.'),
   );
+  $form['advanced']['impliedconsent_method'] = array(
+    '#type' => 'radios',
+    '#title' => t('Plugin loading method'),
+    '#default_value' => variable_get('impliedconsent_method', IMPLIEDCONSENT_METHOD),
+    '#options' => array(
+      'drupal' => t('Standard Drupal'),
+      'snippet' => t('Asynchronous snippet'),
+    ),
+    '#description' => t('Choose the method of loading the script. Standard Drupal uses libraries_load() while the asynchronous snippet is non-blocking by default.'),
+  );
   $form['advanced']['impliedconsent_async'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Do not load the library automatically'),
+    '#title' => t('Skip autoloading'),
     '#default_value' => variable_get('impliedconsent_async', IMPLIEDCONSENT_ASYNC),
     '#description' => t('If checked, loading and initializing the library is omitted and needs to done manually. This option is for advanced implementations.'),
   );

@@ -10,6 +10,7 @@ define('IMPLIEDCONSENT_VARIANT', 'minified');
 define('IMPLIEDCONSENT_MESSAGE', 'We use cookies as set out in our privacy policy. By using this website, you agree we may place these cookies on your device.');
 define('IMPLIEDCONSENT_BUTTON_LABEL', 'Close');
 define('IMPLIEDCONSENT_ASYNC', FALSE);
+define('IMPLIEDCONSENT_METHOD', 'snippet');
 
 /**
  * Implements hook_menu().
@@ -38,8 +39,8 @@ function impliedconsent_libraries_info() {
       'vendor url' => 'https://github.com/dennisinteractive/implied-consent',
       'download url' => 'https://github.com/dennisinteractive/implied-consent',
       'version arguments' => array(
-        'file' => 'dist/implied-consent.js',
-        'pattern' => "/version (.*)/",
+        'file' => 'dist/implied-consent.min.js',
+        'pattern' => "/Implied Consent version ([0-9\.]*)/",
       ),
       'files' => array(
         'js' => array(
@@ -80,23 +81,33 @@ function impliedconsent_page_alter(&$page) {
       'noticeText' => $message_formatted,
       'confirmText' => variable_get('impliedconsent_button_label', IMPLIEDCONSENT_BUTTON_LABEL),
     );
-    drupal_add_js(array('impliedConsent' => $settings), 'setting');
+    $init = array(
+      'var impliedConsent = impliedConsent || {}; impliedConsent.q = impliedConsent.q || [];',
+      'impliedConsent.q.push(["init", ' . drupal_json_encode($settings) . ']);',
+    );
 
-    if (!variable_get('impliedconsent_async', IMPLIEDCONSENT_ASYNC)) {
-      $init = <<<EOF
-jQQ.isolate(function($) {
-  'use strict';
-  $('body').prepend('<div id="__ic-notice"></div>');
-  $('#__ic-notice').impliedConsent(Drupal.settings.impliedConsent);
-});
-EOF;
-      // Add the initiator script.
-      drupal_add_js($init, array('type' => 'inline', 'scope' => 'footer'));
-      // Load the library.
-      $variant = variable_get('impliedconsent_variant', IMPLIEDCONSENT_VARIANT);
-      libraries_load('implied-consent', $variant);
+    // Add the initiator script.
+    drupal_add_js(implode("\n", $init), array('type' => 'inline', 'scope' => 'footer'));
+    // Load the library.
+    $variant = variable_get('impliedconsent_variant', IMPLIEDCONSENT_VARIANT);
+    $method = variable_get('impliedconsent_method', IMPLIEDCONSENT_METHOD);
+    switch ($method) {
+      case 'drupal':
+        libraries_load('implied-consent', $variant);
+        break;
+      default:
+        // $library_path = libraries_get_path('implied-consent') . '/dist/implied-consent' . $variant == 'minified' ? '.min' : '' . '.js';
+        $variant_short = ($variant == 'minified') ? '.min' : '';
+        $library_path = libraries_get_path('implied-consent') . '/dist/implied-consent' . $variant_short . '.js';
+        $snippet = array(
+          '(function(w, d) {',
+          '  var s = d.createElement("script"), el = d.getElementsByTagName("script")[0]; s.async = true;',
+          '  s.src = "' . file_create_url($library_path) . '"; el.parentNode.insertBefore(s, el);',
+          '})(this, this.document);',
+        );
+        drupal_add_js(implode($snippet, PHP_EOL), array('type' => 'inline'));
+        break;
     }
-
   }
 }
 
