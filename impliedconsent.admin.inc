@@ -19,7 +19,7 @@ function impliedconsent_admin_settings_form($form_state) {
 
   $form['content'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Notice contents'),
+    '#title' => t('Notice settings'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
     '#weight' => -1,
@@ -36,6 +36,12 @@ function impliedconsent_admin_settings_form($form_state) {
     '#type' => 'textfield',
     '#title' => t('Close button label'),
     '#default_value' => variable_get('impliedconsent_button_label', IMPLIEDCONSENT_BUTTON_LABEL),
+  );
+  $form['content']['impliedconsent_validate_by_click'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Agree automatically by using the site'),
+    '#description' => t('If checked, consent is implied by clicking any form button or non-external link.'),
+    '#default_value' => variable_get('impliedconsent_validate_by_click', IMPLIEDCONSENT_VALIDATE_BY_CLICK),
   );
 
   $form['page_vis_settings'] = array(

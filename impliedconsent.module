@@ -11,6 +11,7 @@ define('IMPLIEDCONSENT_MESSAGE', 'We use cookies as set out in our privacy polic
 define('IMPLIEDCONSENT_BUTTON_LABEL', 'Close');
 define('IMPLIEDCONSENT_ASYNC', FALSE);
 define('IMPLIEDCONSENT_METHOD', 'snippet');
+define('IMPLIEDCONSENT_VALIDATE_BY_CLICK', TRUE);
 
 /**
  * Implements hook_menu().
@@ -80,6 +81,7 @@ function impliedconsent_page_alter(&$page) {
     $settings = array(
       'noticeText' => $message_formatted,
       'confirmText' => variable_get('impliedconsent_button_label', IMPLIEDCONSENT_BUTTON_LABEL),
+      'validateByClick' => (bool) variable_get('impliedconsent_validate_by_click', IMPLIEDCONSENT_VALIDATE_BY_CLICK),
     );
     $init = array(
       'var impliedConsent = impliedConsent || {}; impliedConsent.q = impliedConsent.q || [];',
