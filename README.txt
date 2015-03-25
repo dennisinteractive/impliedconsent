@@ -8,15 +8,15 @@ CONTENTS OF THIS FILE
 
 INTRODUCTION
 ------------
-Adds Drupal support to the Implied Consent JavaScript tool.
-The script implements an implied consent notice to comply with
-the UK's implementation of the EU cookie laws.
+Adds Drupal support to the Implied Consent JavaScript tool. The script
+implements an implied consent notice to comply with the UK's implementation of
+the EU cookie laws.
 
 REQUIREMENTS
 ------------
 This module requires the following modules:
  * Libraries (https://www.drupal.org/project/libraries)
- * Implied Consent Library (https://github.com/dennisinteractive/implied-consent/archive/0.3.0.tar.gz)
+ * Implied Consent Library (https://github.com/dennisinteractive/implied-consent)
 
 INSTALLATION
 ------------
@@ -28,5 +28,5 @@ CONFIGURATION
 -------------
 Visit /admin/config/system/impliedconsent
 
-You can customise the message to be displayed.
-Select which pages it should appear, and which roles.
+You can customise the message displayed and the acknowledge button label.
+Select which pages it should appear on and for which user roles.
