@@ -1,8 +1,0 @@
-core = 7.x
-api  = 2
-
-libraries[implied_consent][download][type] = "git"
-libraries[implied_consent][download][url] = "https://github.com/dennisinteractive/implied-consent.git"
-libraries[implied_consent][download][tag] = "1.1.0"
-libraries[implied_consent][directory_name] = "implied-consent"
-libraries[implied_consent][destination] = "libraries"
