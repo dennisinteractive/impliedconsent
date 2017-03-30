@@ -57,6 +57,7 @@ function impliedconsent_page_attachments(array &$attachments) {
     [
       '#type' => 'html_tag',
       '#tag' => 'script',
+      '#weight' => 100,
       '#value' => '
         var impliedConsent = impliedConsent || {}; impliedConsent.q = impliedConsent.q || [];
         impliedConsent.q.push(["init", ' . Json::encode($options) . ']);',
