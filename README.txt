@@ -20,8 +20,9 @@ This module requires the following modules:
 INSTALLATION
 ------------
  * Install as you would normally install a contributed drupal module.
- * Download the implied consent library by running npm. If you do not use npm you can download the library manually
-   and use it by overriding in a the module or theme info.yml file as follows:
+ * Download the implied consent library by running npm.
+   If you do not use npm you can download the library by other means and use it by setting the
+   library configuration or by overriding in the theme info.yml file as follows:
 
      libraries-override:
        impliedconsent/implied-consent: {your_implied_consent_library}
@@ -29,4 +30,4 @@ INSTALLATION
 
 CONFIGURATION
 -------------
- *
+ * /admin/config/system/impliedconsent

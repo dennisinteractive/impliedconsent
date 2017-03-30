@@ -65,5 +65,7 @@ function impliedconsent_page_attachments(array &$attachments) {
   ];
 
   // Attach the library.
-  $attachments['#attached']['library'][] = 'impliedconsent/implied-consent';
+  if ($library = $config->get('library')) {
+    $attachments['#attached']['library'][] = $library;
+  }
 }

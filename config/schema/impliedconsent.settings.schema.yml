@@ -4,6 +4,9 @@ impliedconsent.settings:
     notice_text:
       type: string
       label: 'Notice text'
+    notice_text_format:
+      type: string
+      label: 'Notice text format'
     confirm_text:
       type: string
       label: 'Confirm text'
@@ -34,3 +37,6 @@ impliedconsent.settings:
     font_family:
       type: string
       label: 'CSS font-family'
+    library:
+      type: string
+      label: 'CSS Library'
