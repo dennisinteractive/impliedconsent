@@ -1,0 +1,15 @@
+{
+  "name": "drupal-impliedconsent",
+  "version": "1.0.0",
+  "description": "Implied Consent Drupal module",
+  "private": true,
+  "devDependencies": {
+    "napa": "^2.3.0"
+  },
+  "scripts": {
+    "install": "napa"
+  },
+  "napa": {
+    "implied-consent": "dennisinteractive/implied-consent#1.1.0"
+  }
+}

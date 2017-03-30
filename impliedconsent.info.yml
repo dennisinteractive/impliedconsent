@@ -1,4 +1,5 @@
-name = Implied Consent
-description = Displays the Implied Consent cookie notice plugin
-core = 7.x
-dependencies[] = libraries
+name: 'Implied Consent'
+type: module
+description: 'Displays the Implied Consent cookie notice plugin'
+package: Legal
+core: 8.x

@@ -15,18 +15,12 @@ the EU cookie laws.
 REQUIREMENTS
 ------------
 This module requires the following modules:
- * Libraries (https://www.drupal.org/project/libraries)
  * Implied Consent Library (https://github.com/dennisinteractive/implied-consent)
 
 INSTALLATION
 ------------
- * Install as you would normally install a contributed drupal module. See:
-   https://drupal.org/documentation/install/modules-themes/modules-7
-   for further information.
+ * Install as you would normally install a contributed drupal module.
 
 CONFIGURATION
 -------------
-Visit /admin/config/system/impliedconsent
-
-You can customise the message displayed and the acknowledge button label.
-Select which pages it should appear on and for which user roles.
+ *
