@@ -10,4 +10,3 @@ button_background_color: '#555'
 button_color: '#fff'
 font_size: '12px'
 font_family: 'sans-serif'
-library: impliedconsent/implied-consent
