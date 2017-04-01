@@ -21,8 +21,9 @@ INSTALLATION
 ------------
  * Install as you would normally install a contributed drupal module.
  * Download the implied consent library by running npm.
-   If you do not use npm you can download the library by other means and use it by setting the
-   library configuration or by overriding in the theme info.yml file as follows:
+   If you do not use npm you can download the JS library by other means and use it by
+   overriding the default library using hook_library_info_alter() or in the theme
+   info.yml file as follows:
 
      libraries-override:
        impliedconsent/implied-consent: {your_implied_consent_library}
