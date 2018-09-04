@@ -7,7 +7,8 @@
     "napa": "^2.3.0"
   },
   "scripts": {
-    "install": "napa"
+    "install": "napa",
+    "postinstall": "cp node_modules/implied-consent/dist/implied-consent.min.js js/implied-consent.min.js"
   },
   "napa": {
     "implied-consent": "dennisinteractive/implied-consent#1.1.0"
