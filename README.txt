@@ -20,13 +20,26 @@ This module requires the following modules:
 INSTALLATION
 ------------
  * Install as you would normally install a contributed drupal module.
- * Download the implied consent library by running npm.
-   If you do not use npm you can download the JS library by other means and use it by
-   overriding the default library using hook_library_info_alter() or in the theme
-   info.yml file as follows:
+ * Either download the implied-consent library and extract it to /libraries
+   Or use composer with the following in the root composer.json:
 
-     libraries-override:
-       impliedconsent/implied-consent: {your_implied_consent_library}
+{
+    "type": "package",
+    "package": {
+        "name": "dennisinteractive/implied-consent",
+        "version": "1.1.0",
+        "type": "drupal-library",
+        "source": {
+            "url": "https://github.com/dennisinteractive/implied-consent.git",
+            "type": "git",
+            "reference": "1.1.0"
+        },
+        "dist": {
+            "url": "https://github.com/dennisinteractive/implied-consent/archive/1.1.0.zip",
+            "type": "zip"
+        }
+    }
+}
 
 
 CONFIGURATION
