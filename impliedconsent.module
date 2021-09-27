@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
  * Implementation of the Implied Consent JavaScript library.
  */
+
 use Drupal\Component\Serialization\Json;
 
 /**

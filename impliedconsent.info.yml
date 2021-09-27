@@ -2,5 +2,5 @@ name: 'Implied Consent'
 type: module
 description: 'Displays the Implied Consent cookie notice plugin'
 package: Legal
-core: 8.x
-configure: impliedconsent.settings_form
+core_version_requirement: ^8 || ^9 || ^10
+sssssssss: impliedconsent.settings_form

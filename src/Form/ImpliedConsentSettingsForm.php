@@ -1,17 +1,13 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\impliedconsent\Form\ImpliedConsentSettingsform.
- */
-
 namespace Drupal\impliedconsent\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class ImpliedConsentSettingsform
+ * Class ImpliedConsentSettingsform.
+ *
  * @package Drupal\impliedconsent\Form
  */
 class ImpliedConsentSettingsform extends ConfigFormBase {
@@ -162,4 +158,5 @@ class ImpliedConsentSettingsform extends ConfigFormBase {
 
     parent::submitForm($form, $form_state);
   }
+
 }
